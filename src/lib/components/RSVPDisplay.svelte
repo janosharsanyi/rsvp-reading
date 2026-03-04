@@ -12,7 +12,7 @@
   export let contextBefore = [];
   export let contextAfter = [];
 
-  $: useMultiMode = multiWordEnabled && wordGroup.length > 0;
+  $: useMultiMode = !showContext && multiWordEnabled && wordGroup.length > 0;
 
   // Get the current word (either from single mode or the highlighted word in group)
   $: currentWord = useMultiMode ? (wordGroup[highlightIndex] || '') : word;
